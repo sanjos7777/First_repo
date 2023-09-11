@@ -243,16 +243,17 @@ TabError виникає, якщо в одному файлі використо�
 
 TypeError виникає, коли операція зі змінною цього типу неможлива."""
 
-a = "a"
 # int(a) тут буде виняток в обробці з типом ValueError
 
-while True:
-    user_input = input("Enter any numbers - ")
-    try:
-        x = int(user_input)
-    except ValueError:
-        print ("Should be a number. Try again!!")
-        continue
+# while True:
+#     user_input = input("Enter any numbers - ")
+#     try:
+#         x = int(user_input)
+#     except ValueError:
+#         print ("Should be a number. Try again!!")
+#         continue
+#     print ("Should be a number. Try again!!")
+
 
 
 val = 'a'
