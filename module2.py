@@ -1,111 +1,7 @@
-# ///////////////////////////   Module 1 types_of_data    /////////////////////////////
-
-
-# Python print() with end Parameter
-print ("hello world!!!", end= " ")
-print("Hello Git")
-
-#Example 3: Python print() with sep parameter
-print('New Year', 2023, 'See you soon!', sep= '. ')
-
-#Sometimes we would like to format our output to make it look attractive. This can be done by using the str.format() method. For example,
-x = 5
-y = 10
-
-print('The value of x is {} and y is {}'.format(y,x))
-
-
-#print("Hello") # at the beggining - meaning that this string commented and doesn't work like a code
-
-# nmbers
-y = 8**3+4*(2+2)
-x = 3.3 + 2j
-print (x, y)
-# заокруглення
-print (round(5.5)) # 6 через парне число заокруглення до найближчого парного, тобто 6
-print (round(6.5)) # 6 через парне число заокруглення до найближчого парного, тобто 6
-print (round(6.5444, 2)) # перше число яке тре заокруглити, другий параметр кількість цифр після коми
-print ('{:.30}'.format(2.665))
-print ('{:.30}'.format(2.675))
-# complex number
-complex = 3.14 + 1J # У Python вбудовані також комплексні числа. Запис таких чисел відбувається у вигляді пари значень: дійсної та уявної частини, які поділяються символом операції додавання. На кінці уявної складової частини комплексного числа обов'язково ставлять букву j.
-# Щоб отримати дійсну та уявну частину чисел, окремо необхідно використовувати властивості real та imag:
-
-print(complex.real)  # 3.14
-print(complex.imag)  # 1.0
-
-a = -2 + 3j
-b = 4 + 2.1j
-result = a + b
-print ("result ", result) #(2+5.1j)
-
-# f- string
-a = "hello "
-b = "world"
-c= a+b
-print(c)
-name = "Jonh"
-hello_string = f"Hello, {name}"
-print (hello_string)
-
-''' багаторядковий кометар - три одинарних або три подвійні кавички на початку та на прикінці  
- boolean
-# Для приведення інших типів даних до булевого типу використовується функція bool() Функція bool() поверне False у наступних випадках
-# -порожній рядок
-# -нульове число
-# -порожній список/кортеж
-# В інших випадках функція поверне True
-'''
-e = True
-d = False
-age = 18
-adult1 = age >= 18 
-print(adult1) # true
-print ("should be false", a == b) # false
-
-
-"""
- input in Console
-# e = input ("введдіть своє імʼя: ")
-# age1 = input ("введдіть свій вік: ")
-#num = int(input('Enter a number: ')) # at once convert to integer
-#input_output = f"Hello, how is it going, {e}. You are {age1} years old and you are allowed to visite this site"
-# print(input_output)
-"""
-
-pi = float(age)
-print (pi)
-print (type (pi))
-
-#Для роботи з числами в Python існує один з найважливіших модулів math (для комплексних чисел існує окремий модуль cmath). Цей модуль надає великий функціонал для роботи з числовими даними. Щоб додати модуль до своєї програми, необхідно виконати імпорт цього модуля за допомогою ключового слова import => import math
-import math
-a = math.sqrt(100)  # корінь квадратний 10.0
-
-a = -2
-b = 7
-c = -6
-D = pow(b, 2) - 4 * a * c
-x1 = (-b + math.pow(D, 0.5)) / (2 * a)
-x2 = (-b - D**0.5) / (2 * a)
-print("MATH", D, x1, x2)
-
-f = 11
-h = f
-print (h)
-f = 33
-print (22222, h)
-num_1 = 1.8
-num_2 = int(float(str(num_1)))
-print(num_1, num_2, type(num_2))
-
-w = 3
-q = 4
-print(w, id(w))
-print (q, id(q))
 # ///////////////////////////   Module 2 conditions_and_statements    /////////////////////////////
 #2.1 if...elif...else
 #a = input("Enter any number: ")
-a = int(a)
+a = int(-2.8)
 if a > 0:
     print ("Число додатне")
 elif a < 0:
@@ -149,32 +45,39 @@ else:
 2
 >>> not 2<0
 True"""
-# Тернанрні операції
+
+# Тернанрні операції Тернарні оператори – це запис умовних виразів у скороченій формі. Вони знаходять застосування, коли змінній необхідно привласнити значення в залежності від якоїсь умови.
+
 is_nice = True
 state = "Nice" if is_nice else "Not nice"
 print(state)
-
 
 some_data = None
 msg = some_data or "Небуло отримано жодних даних"
 print(msg)
 
 # Блоки інструкцій, вкладеність
-x = int(input("X: "))
-y = int(input("Y: "))
-
-if x == 0: # input 0 for X for run this part
-    print("X can`t be equal to zero")
-    x = int(input("X: "))
-    if x == 0:
-        print("X can`t be equal to zero")
+x1 = int(input("X1: "))
+y1 = int(input("Y1: "))
+if x1 == 0:
+    print("X1 can`t be equal to zero. Try again")
+    x1 = int(input("X1: "))
+    while x1 == 0: 
+        print("and again")
+        x1 = int(input("X1: "))
+if y1 == 0:
+    print("Y1 can`t be equal to zero. Try again")
+    y1 = int(input("Y1: "))
+    while y1 == 0: 
+        print("and again")
+        y1 = int(input("Y1: "))
+print(f"You entered next data - X is equaled {x1} and Y is equaled {y1} and result of y/x is {y1/x1}")
         
-
-    
 #print(int(y / x))
 # Приклад вкладеності для визначення чвертей для координатної площини.
-x = -3
-y = -2
+
+x = int(input("X: "))
+y = int(input("Y: "))
 if x >= 0:
     if y >= 0:               # x > 0, y > 0
         print("Перша чверть")
@@ -232,29 +135,44 @@ for i in range(10): #range - діапазон
                 # 2 % 2 -> 0 -False - виходимо з If і друкуємо i
         continue
     print (i)
+"""
+Щоб, наприклад, виконати 5 ітерацій, можна створити колекцію використовуючи функцію range. Виклик функції range(5) згенерує діапазон чисел 0, 1, 2, 3 та 4.
+
+for variable in range(5):
+    print(variable)  # 0 1 2 3 4
+При передачі двох аргументів функція range поверне діапазон, що починається з першого аргументу по другий, але не включаючи його. Виклик функції range(5, 10) дасть на виході діапазон цілих чисел (5, 6, 7, 8, 9). Якщо перший аргумент буде більшим або дорівнює другому, функція range поверне порожній діапазон і цикл не буде виконуватись.
+
+Якщо необхідно змінити крок виконання циклу з 1 на інше ціле число, його передають третім параметром range(0, 5, 2)"""
+
+range(0, 5, 2) #0 2 4
+
+
+
 
 # 2.5 Винятки.
 """Основні типи виключень у Python
-SyntaxError — синтаксична помилка.
+Коли розробник бачить потенційно небезпечні місця в коді, він може перехопити, відповідним чином обробити виключення та запобігти аварійному завершенню програми. Для цього призначений оператор try - except.
 
+Небезпечний код, який може викликати виникнення виключення, ми поміщаємо в блок try, за яким розташовується альтернативний блок except. Коли в блоці try виникає виключення, виконання програми негайно переноситься в відповідний блок except без виконання інструкцій, що залишилися, в блоці try. Потім йде необов'язковий блок, який починається із ключового слова else. Цей код виконається лише якщо виключень не сталося. Останнім йде необов'язковий блок коду, який починається з ключового слова finally, він виконається у будь-якому випадку, незалежно від того були помилки чи ні
+SyntaxError — синтаксична помилка.
+ZeroDivisionError - ділення на нуль
 IndentationError — помилка, яка виникає, якщо у виділенні блоків інструкцій пробілами припущена помилка.
 
 TabError виникає, якщо в одному файлі використовувати пробіли і табуляції для виділення блоків інструкцій.
 
 TypeError виникає, коли операція зі змінною цього типу неможлива."""
 
+#a = "a"
 # int(a) тут буде виняток в обробці з типом ValueError
 
-# while True:
-#     user_input = input("Enter any numbers - ")
-#     try:
-#         x = int(user_input)
-#     except ValueError:
-#         print ("Should be a number. Try again!!")
-#         continue
-#     print ("Should be a number. Try again!!")
-
-
+while True:
+    user_input = input("Enter any numbers - ")
+    try:
+        x = int(user_input)
+    except ValueError:
+        print ("Should be a number. Try again!!")
+        continue
+    break
 
 val = 'a'
 try:
