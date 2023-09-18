@@ -63,15 +63,14 @@ string='abaa'
 def format_string(string, length):
     print(len(string))
     if len(string) >= length:
-        print(111)
         return string
     else:
-        print(222)
         add = (length - len(string)) // 2
-        print (add)
         for l in range(1, add + 1):
             string = f" {string}"
         return string
+        # add = (length - len(string)) // 2
+        # string = " " * add + string
 string = format_string(string, length)
 print(444, len(string))
 
