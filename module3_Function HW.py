@@ -112,12 +112,11 @@ Cnk = n! / ((n - k)! · k!)
 Зверніть увагу на те, які великі значення ми отримуємо для факторіала. Рекурсивні висловлювання треба завжди застосовувати з обережністю при обчисленнях, щоб не отримати переповнення пам'яті.
 """
 def factorial(n):
-    if n == 1:
+    if n == 1 or n == 0:
         return 1  # Базовий випадок
-    elif n == 0:
-        return 1
     else:
         return n * factorial(n - 1)
+print ("factorial of 5 ", factorial(5))
 
 def number_of_groups(n, k):
     C = factorial(n) / (factorial (n - k) * factorial(k))
