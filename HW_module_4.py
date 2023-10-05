@@ -135,28 +135,19 @@ game([[1, 2, 5, 10], [2, 10, 2], [1, 3, 1]], 1)
 
 # ==================================
 def is_valid_pin_codes(pin_codes):
-    if len(pin_codes) > 0:
-        for char in pin_codes:
-            if isinstance(char, str) and len(char) == 4:
-                try:
-                    char_to_int = int(char)
-                except ValueError:
-                    print ("not a number")
-                    return False
-                pin_codes.remove(char)
-                if char not in pin_codes:
-                    print (100 )
-                else:
-                    print ("duplicates ", char)
-                    return False               
-            else:
-                print ("invalid pin ", char)
-                return False
-    else:
-        print (444)
-        return False  
-    print (777)
+    if pin_codes == []:
+        return False
+    if len(pin_codes) != len(set(pin_codes)):
+        return False
+    for pin in pin_codes:
+        if len(pin) != 4:
+            return False
+        if not pin.isdigit():
+            return False
     return True
+pin_list = ['1100', '2034', '1010', '1100']
+result = is_valid_pin_codes(pin_list)
+print(result)
 # print (is_valid_pin_codes ([]))
 print (is_valid_pin_codes (['1101', '9034', '00r1', '1102']))
 

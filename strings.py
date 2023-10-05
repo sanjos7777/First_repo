@@ -62,8 +62,33 @@ for i in range(6):
     s = "int: {0:d};  hex: {0:#x};  oct: {0:#o};  bin: {0:#b}".format(i)
     print(s)
 #width = 5
-for num in range(12):
-    print('{:^10} {:^10} {:^10}'.format(num, num**2, num**3))
+numbers = [1,2,3,4,5,6,7,8,9,10]
+header_1 = "|{:^15}|{:^15}|{:^15}|".format("int", "int^2", "int^3")
+header_2 = "|{:^15}|{:^15}|{:^15}|{:^15}|".format("int", "hex", "oct", "bin")
 
+separator_1 = "-"*len(header_1)
+separator_2 = "-"*len(header_2)
+
+body_1 =""
+body_2 =""
+for num in numbers:
+    body_1 += "|{:^15}|{:<15}|{:>15}|\n".format(num, num**2, num**3)
+    body_2 += "|{0:^15d}|{0:^15x}|{0:^15o}|{0:^15b}|\n".format(num)
+
+table_1 = "\n".join([separator_1, header_1, separator_1, body_1, separator_1])
+print (table_1)
+table_2 = "\n".join([separator_2, header_2, separator_2, body_2, separator_2])
+print (table_2)
+
+# ==========================================
+
+trans_map = {ord("а"):"a"}
+text = "Breаd and butter"
+indx = text.find("utter")
+new_indx = text.find("read")
+print(indx)
+print(new_indx)
+new_indx = text.translate(trans_map).find("read")
+print(new_indx)
 
 
